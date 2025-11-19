@@ -15,6 +15,7 @@ app.add_middleware(
     "https://task-manager-2y28.vercel.app"
 ]
 ,
+    allow_origins=["*"],      # Allow all origins
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
