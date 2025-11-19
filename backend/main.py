@@ -10,11 +10,7 @@ database.init_db()
 app = FastAPI(title="Todo App Backend")
 
 app.add_middleware(
-    allow_origins = [
-    "http://localhost:5173",
-    "https://task-manager-2y28.vercel.app"
-]
-,
+    CORSMiddleware,
     allow_origins=["*"],      # Allow all origins
     allow_credentials=True,
     allow_methods=["*"],
