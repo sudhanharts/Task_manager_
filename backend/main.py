@@ -11,7 +11,10 @@ app = FastAPI(title="Todo App Backend")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],      # Allow all origins
+    allow_origins=[
+        "https://task-manager-2y28.vercel.app",  # your live frontend
+        "http://localhost:5173",                 # for local development
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
