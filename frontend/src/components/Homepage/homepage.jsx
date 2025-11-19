@@ -17,7 +17,7 @@ const Home = () => {
   // Fetch tasks
   const fetchTasks = async () => {
     try {
-      const res = await axios.get("http://localhost:8000/tasks");
+      const res = await axios.get("https://task-manager-ehbt.onrender.com/tasks");
       setTasks(Array.isArray(res.data) ? res.data : []);
     } catch (error) {
       console.error("FAILED TO LOAD TASKS:", error);
