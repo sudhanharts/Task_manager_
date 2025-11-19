@@ -31,7 +31,7 @@ const Home = () => {
   // Save new task
   const handleSaveTask = async (newTask) => {
     try {
-      await axios.post("http://localhost:8000/tasks", newTask);
+      await axios.post("https://task-manager-ehbt.onrender.com/tasks", newTask);
       await fetchTasks();
       setShowOverlay(false);
     } catch (error) {
@@ -42,7 +42,7 @@ const Home = () => {
   // Mark Complete
   const handleCompleteTask = async (id) => {
     try {
-      await axios.put(`http://localhost:8000/tasks/${id}`, {
+      await axios.put(`https://task-manager-ehbt.onrender.com/tasks/${id}`, {
         completed: 1,
         status: "completed",
       });
@@ -62,7 +62,7 @@ const Home = () => {
       dt.setDate(dt.getDate() + 1);
       const newDate = dt.toISOString().split("T")[0];
 
-      await axios.put(`http://localhost:8000/tasks/${id}`, {
+      await axios.put(`https://task-manager-ehbt.onrender.com/tasks/${id}`, {
         date: newDate,
         status: "tomorrow",
       });
@@ -76,7 +76,7 @@ const Home = () => {
   // Delete
   const handleDeleteTask = async (id) => {
     try {
-      await axios.delete(`http://localhost:8000/tasks/${id}`);
+      await axios.delete(`https://task-manager-ehbt.onrender.com/tasks/${id}`);
       await fetchTasks();
     } catch (error) {
       console.error("FAILED TO DELETE:", error);
